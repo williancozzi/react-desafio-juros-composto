@@ -12,15 +12,25 @@ export default function App() {
   useEffect(() => {
     const getTerm = () => {
       const newTerms = [];
+      const isValid = () => {
+        return (
+          initialCapital <= 100000 &&
+          initialCapital > 0 &&
+          monthlyInterestRate <= 12 &&
+          monthlyInterestRate >= -12 &&
+          initialPeriod <= 36 &&
+          initialPeriod > 0
+        );
+      };
 
-      if (initialCapital !== 0) {
+      if (isValid()) {
         for (let idx = 1; idx <= initialPeriod; idx++) {
           let total = (
             initialCapital *
             (monthlyInterestRate / 100 + 1) ** idx
           ).toFixed(2);
 
-          let percentage = monthlyInterestRate;
+          let percentage = ((total / initialCapital - 1) * 100).toFixed(2);
 
           newTerms.push({
             id: idx,
