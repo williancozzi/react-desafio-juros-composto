@@ -1,42 +1,18 @@
 import React from "react";
 import Installment from "./Installment";
 
-export default function Installments() {
-  const installments = [
-    1,
-    2,
-    3,
-    4,
-    5,
-    6,
-    7,
-    8,
-    9,
-    10,
-    11,
-    12,
-    13,
-    1,
-    2,
-    3,
-    4,
-    5,
-    6,
-    7,
-    8,
-    9,
-    10,
-    11,
-    12,
-    13,
-  ];
-
+export default function Installments({ term }) {
   return (
     <div style={styles.installments}>
-      {installments.map((installment, index) => {
+      {term.map((installment, index) => {
         return (
-          <div style={styles.installment}>
-            <Installment key={index} />
+          <div key={installment.id} style={styles.installment}>
+            <Installment
+              id={installment.id}
+              total={installment.total}
+              income={installment.income}
+              percent={installment.percent}
+            />
           </div>
         );
       })}
@@ -48,9 +24,9 @@ const styles = {
   installments: {
     display: "flex",
     flexWrap: "wrap",
-    maxWidth: "950px",
+    maxWidth: "1100px",
   },
   installment: {
-    margin: "10px",
+    margin: "15px",
   },
 };

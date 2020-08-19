@@ -1,13 +1,13 @@
 import React from "react";
 
-export default function Installment() {
+export default function Installment({ id, total, income, percent }) {
   return (
     <div style={styles.installment}>
-      <div style={styles.idTerm}>1</div>
+      <div style={styles.idTerm}>{id}</div>
       <div>
-        <div>R$ 999.999,20</div>
-        <div>+R$ 7,20</div>
-        <div>0,80%</div>
+        <div>R$ {total}</div>
+        <div>R$ {income}</div>
+        <div>{percent}%</div>
       </div>
     </div>
   );
@@ -17,8 +17,8 @@ const styles = {
   installment: {
     display: "flex",
     justifyContent: "space-around",
-    minWidth: "50px",
-    maxWidth: "150px",
+    minWidth: "150px",
+    maxWidth: "200px",
     padding: "10px",
     border: "1px solid lightsalmon",
     borderRadius: "8px",
@@ -28,5 +28,13 @@ const styles = {
     alignSelf: "center",
     fontWeight: "bold",
     marginRight: "15px",
+  },
+  openStyle: {
+    maxWidth: "100%",
+    transition: "max-width 1s",
+  },
+  closedStyle: {
+    maxWidth: "0%",
+    transition: "max-width 1s",
   },
 };
