@@ -10,8 +10,8 @@ export default function Installments({ term }) {
             <Installment
               id={installment.id}
               total={installment.total}
-              income={installment.income}
-              percent={installment.percent}
+              interest={installment.interest}
+              percentage={installment.percentage}
             />
           </div>
         );

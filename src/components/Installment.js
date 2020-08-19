@@ -1,13 +1,13 @@
 import React from "react";
 
-export default function Installment({ id, total, income, percent }) {
+export default function Installment({ id, total, interest, percentage }) {
   return (
     <div style={styles.installment}>
       <div style={styles.idTerm}>{id}</div>
       <div>
         <div>R$ {total}</div>
-        <div>R$ {income}</div>
-        <div>{percent}%</div>
+        <div>R$ {interest}</div>
+        <div>{percentage}%</div>
       </div>
     </div>
   );

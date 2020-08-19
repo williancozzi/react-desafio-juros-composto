@@ -11,24 +11,25 @@ export default function App() {
 
   useEffect(() => {
     const getTerm = () => {
-      const newterms = [];
+      const newTerms = [];
 
       if (initialCapital !== 0) {
-        for (let index = 0; index < initialPeriod; index++) {
-          let interest = monthlyInterestRate / 100;
-          let total =
-            parseFloat(initialCapital * interest) + parseFloat(initialCapital);
-          let income = initialCapital * interest;
-          let percent = monthlyInterestRate * (index + 1);
+        for (let idx = 1; idx <= initialPeriod; idx++) {
+          let total = (
+            initialCapital *
+            (monthlyInterestRate / 100 + 1) ** idx
+          ).toFixed(2);
 
-          newterms.push({
-            id: index + 1,
-            total: formatToBrl(formatNumber(total)),
-            income: formatToBrl(formatNumber(income)),
-            percent: formatNumber(percent),
+          let percentage = monthlyInterestRate;
+
+          newTerms.push({
+            id: idx,
+            total: formatNumber(formatToBrl(total)),
+            interest: (total - initialCapital).toFixed(2),
+            percentage,
           });
         }
-        setTerm(newterms);
+        setTerm(newTerms);
       }
     };
 
