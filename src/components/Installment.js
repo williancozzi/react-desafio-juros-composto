@@ -1,16 +1,13 @@
 import React from "react";
 
 export default function Installment({ id, total, interest, percentage }) {
-  const totalToCompare = total;
-
-  console.log(total, totalToCompare);
   return (
     <div className="card">
       <div style={styles.idTerm}>{id}</div>
 
       <div>
-        {total > totalToCompare ? (
-          <div style={styles.negativeBold}>R$ {total}</div>
+        {total >= interest * 0.1 ? (
+          <div style={styles.positiveGreen}>R$ {total}</div>
         ) : (
           <div style={styles.positiveGreen}>R$ {total}</div>
         )}
