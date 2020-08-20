@@ -15,7 +15,7 @@ Create, using React, an application that should be able to calculate the appreci
 ![React-Juros-Composto-Google-Chrome-2020-08-20-11-54-35-1](https://user-images.githubusercontent.com/39573063/90793902-816b4a80-e2e2-11ea-9912-e08c3df211ef.gif)
 
 ## Test the application
-> deploying...
+> https://calculadorajuroscomposto.netlify.app/
 
 ## Requirements
 * Define the elements that will be considered as application state:
