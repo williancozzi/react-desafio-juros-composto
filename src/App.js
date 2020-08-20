@@ -32,10 +32,11 @@ export default function App() {
 
           let percentage = ((total / initialCapital - 1) * 100).toFixed(2);
 
+          let interest = (total - initialCapital).toFixed(2);
           newTerms.push({
             id: idx,
             total: formatNumber(formatToBrl(total)),
-            interest: (total - initialCapital).toFixed(2),
+            interest: formatToBrl(interest),
             percentage,
           });
         }
