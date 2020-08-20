@@ -10,7 +10,7 @@ export default function Installment({ id, total, interest, percentage }) {
 
       <div>
         {total > totalToCompare ? (
-          <div style={styles.negative}>R$ {total}</div>
+          <div style={styles.negativeBold}>R$ {total}</div>
         ) : (
           <div style={styles.positiveGreen}>R$ {total}</div>
         )}
@@ -18,11 +18,11 @@ export default function Installment({ id, total, interest, percentage }) {
         {interest >= 0 ? (
           <div style={styles.positiveGreen}>+R$ {interest}</div>
         ) : (
-          <div style={styles.negative}>-R$ {interest * -1}</div>
+          <div style={styles.negativeBold}>-R$ {interest * -1}</div>
         )}
 
         {percentage >= 0 ? (
-          <div style={styles.positiveBlue}>{percentage}</div>
+          <div style={styles.positiveBlue}>{percentage}%</div>
         ) : (
           <div style={styles.negative}>{percentage}%</div>
         )}
@@ -49,8 +49,13 @@ const styles = {
   },
   positiveGreen: {
     color: "green",
+    fontWeight: "600",
   },
   negative: {
     color: "red",
+  },
+  negativeBold: {
+    color: "red",
+    fontWeight: "600",
   },
 };
