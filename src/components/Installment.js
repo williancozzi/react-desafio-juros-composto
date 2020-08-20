@@ -22,7 +22,7 @@ export default function Installment({ id, total, interest, percentage }) {
         )}
 
         {percentage >= 0 ? (
-          <div style={styles.positiveBlue}>+R$ {percentage}</div>
+          <div style={styles.positiveBlue}>{percentage}</div>
         ) : (
           <div style={styles.negative}>{percentage}%</div>
         )}
