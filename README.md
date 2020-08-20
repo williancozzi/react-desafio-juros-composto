@@ -3,8 +3,6 @@
 ## Objectives
 Create, using React, an application that should be able to calculate the appreciation/depreciation of a capital based on a monthly interest rate and time (months), using the compound interest concept.
 
-To exercise some concepts as:
-
 ## Techs
 * Javascript
 * Functional Components
