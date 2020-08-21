@@ -90,6 +90,7 @@ const styles = {
   formStyle: {
     display: "flex",
     justifyContent: "center",
+    flexWrap: "wrap",
     width: "100%",
     margin: "10px",
   },
