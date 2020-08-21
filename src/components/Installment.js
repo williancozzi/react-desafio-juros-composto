@@ -6,10 +6,10 @@ export default function Installment({ id, total, interest, percentage }) {
       <div style={styles.idTerm}>{id}</div>
 
       <div>
-        {total >= interest * 0.1 ? (
+        {interest >= 0 ? (
           <div style={styles.positiveGreen}>R$ {total}</div>
         ) : (
-          <div style={styles.positiveGreen}>R$ {total}</div>
+          <div style={styles.negativeBold}>R$ {total}</div>
         )}
 
         {interest >= 0 ? (

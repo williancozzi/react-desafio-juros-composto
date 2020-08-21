@@ -4,7 +4,7 @@ import Installment from "./Installment";
 export default function Installments({ term }) {
   return (
     <div style={styles.installments}>
-      {term.map((installment, index) => {
+      {term.map((installment) => {
         return (
           <div key={installment.id} style={styles.installment}>
             <Installment
